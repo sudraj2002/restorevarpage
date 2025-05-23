@@ -95,6 +95,8 @@
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <!-- PDF Link. -->
+<!-- PDF Link commented -->
+<!--
 <div class="publication-links">
     <!-- PDF Link. -->
     <span class="link-block">
@@ -106,9 +108,9 @@
             <span>Paper</span>
         </a>
     </span>
-
-    <!-- Supplementary material link commented out -->
-    
+-->
+<!-- Supplementary commented -->
+  <!--  
     <span class="link-block">
         <a href=""
             class="external-link button is-normal is-rounded is-dark" target="_blank">
@@ -118,7 +120,7 @@
             <span>Supplementary material</span>
         </a>
     </span>
-    
+    -->
                                 <span class="link-block">
                                     <a href=""
                                         class="external-link button is-normal is-rounded is-dark">
@@ -156,26 +158,21 @@
                     
                     <div class="content has-text-justified">
                         <p>
-                            Deep learning–based models for All-In-One image Restoration (AIOR) have achieved significant advancements in recent years. 
-                            However, their practical applicability is limited by poor generalization to samples outside the training distribution. 
-                            This limitation arises primarily from insufficient diversity in degradation variations and scenes within existing datasets, 
-                            resulting in inadequate representations of real-world scenarios. 
-                            Additionally, capturing large-scale real-world paired data for degradations such as haze, low-light, and raindrops is often cumbersome and sometimes infeasible. 
-                            In this paper, we leverage the generative capabilities of latent diffusion models to synthesize high-quality degraded images from their clean counterparts. 
-                            Specifically, we introduce GenDeg, a degradation and intensity-aware conditional diffusion model, capable of producing diverse degradation patterns on clean images. 
-                            Using GenDeg, we synthesize over 550k samples across six degradation types: haze, rain, snow, motion blur, low-light, and raindrops. 
-                            These generated samples are integrated with existing datasets to form the GenDS dataset, comprising over 750k samples. 
-                            Our experiments reveal that image restoration models trained on GenDS dataset exhibit significant improvements in out-of-distribution 
-                            performance as compared to when trained solely on existing datasets. 
-                            Furthermore, we provide comprehensive analyses on implications of diffusion model-based synthetic degradations for AIOR.
+                           The use of latent diffusion models (LDMs) such as Stable Diffusion has significantly improved the perceptual quality of All-in-One image Restoration (AiOR) methods, 
+                            while also enhancing their generalization capabilities. However, these LDM-based frameworks suffer from slow inference due to their iterative denoising process, 
+                            rendering them impractical for time-sensitive applications. To address this, we propose RestoreVAR, a novel generative approach for AiOR that significantly outperforms LDM-based models 
+                            in restoration performance while achieving over **10×** faster inference. RestoreVAR leverages visual autoregressive modeling (VAR), a recently introduced approach
+                            which performs scale-space autoregression for image generation. VAR achieves comparable performance to that of state-of-the-art diffusion transformers with drastically reduced computational costs. 
+                            To optimally exploit these advantages of VAR for AiOR, we propose architectural modifications and improvements, including intricately designed cross-attention mechanisms and a latent-space refinement module, 
+                            tailored for the AiOR task. Extensive experiments show that RestoreVAR achieves state-of-the-art performance among generative AiOR methods, while also exhibiting strong generalization capabilities.
                         </p>
                     </div>
 
                     <img src="./static/images/intro_website.png" alt="" style="border:0; height:500px; width:1500px;">
                         <div class="content has-text-justified">
                         <p>
-                          Out-of-distribution performance of image restoration models when trained solely using existing datasets and our proposed GenDS dataset. 
-                            Significant improvements can be observed across all degradations. Metric values reduce outward.
+                          RestoreVAR, our proposed VAR-based scale-space generative AiOR model (a), significantly outperforms LDM-based methods as shown in (b). 
+                          RestoreVAR also offers drastic reductions in computational complexity as shown in (c).
                         </p>
                         </div>
                 </div>
@@ -183,7 +180,7 @@
             <!--/ Abstract. -->
 
             <!-- Paper video. -->
-
+            <!--
             <section class="section">
                 <div class="container is-max-desktop">
                     <!-- Abstract. -->
@@ -203,6 +200,7 @@
                     </div>
                 </div>
             </section>
+            -->
             
 
             <section class="section">
@@ -216,8 +214,7 @@
 
                                 <img src="./static/images/block.png" alt="" border=0 height=500 width=1500></img></
                                 <p>
-                                    Illustration of our GenDeg framework: (a) Describes the training stage of our pipeline. (b) Shows the inference process for degradation generation. (c) Depicts the 
-                                    architecture of our Swin transformer-based restoration model.
+                                   Illustration of RestoreVAR for training and inference. (a) Shows the training procedure for each component of RestoreVAR, and (b) shows the overall pipeline during inference. 
                                 </p>
                             </div>
                         </div>
@@ -234,9 +231,8 @@
                             <div class="content has-text-justified proposed-approach">
                                 <h5 class="subtitle has-text-centered"></h5>
                                 
-                                <p> Quantitative comparisons of restoration models using LPIPS and FID metrics (lower is better), trained with and without our GenDS dataset. Performance is evaluated on OoD test sets. 
-                                    The table also includes the performance of existing state-of-the-art (SOTA) approaches. 
-                                    Training with the GenDS dataset significantly enhances OoD performance. (R) indicates real images and (S) indicates synthetic images.
+                                <p> Quantitative comparisons of RestoreVAR with the state-of-the-art LDM-based generative AiOR approaches, and non-generative methods. 
+                                    RestoreVAR significantly outperforms generative methods on PSNR, SSIM and LPIPS scores. The best generative approach is indicated in ***bold***.
                                 </p>
                                 <img src="./static/images/table.png" alt="" border="0" height="500" width="1500">
                             </div>
