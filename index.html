@@ -227,14 +227,18 @@
                     <!-- Abstract. -->
                     <div class="columns is-centered has-text-centered">
                         <div class="column is-four-fifths">
-                            <h2 class="title is-3">Quantitative Results</h2>
+                            <h2 class="title is-3">Quantitative Comparisons</h2>
                             <div class="content has-text-justified proposed-approach">
                                 <h5 class="subtitle has-text-centered"></h5>
                                 
                                 <p> Quantitative comparisons of RestoreVAR with the state-of-the-art LDM-based generative AiOR approaches, and non-generative methods. 
                                     RestoreVAR significantly outperforms generative methods on PSNR, SSIM and LPIPS scores. The best generative approach is indicated in ***bold***.
                                 </p>
-                                <img src="./static/images/table.png" alt="" border="0" height="500" width="1500">
+                                <img src="./static/images/table1.png" alt="" border="0" height="500" width="1500">
+
+                                <p> Quantitative comparisons of generalization of RestoreVAR against state-of-the-art non-generative approaches on real-world images. The best result is indicated in ***bold***.
+                                </p>
+                                <img src="./static/images/table2.png" alt="" border="0" height="500" width="1500">
                             </div>
                         </div>
                     </div>
@@ -255,10 +259,14 @@
                             <div class="content has-text-justified proposed-approach">
                                 <h5 class="subtitle has-text-centered"></h5>
                                 
-                                <img src="./static/images/qual.png" alt="" border="0" height="500" width="1500">
+                                <img src="./static/images/qual1.png" alt="" border="0" height="500" width="1500">
                                 <p>
-                                    Qualitative comparisons of image restoration models trained with and without our GenDS dataset. 
-                                    The suffix GD represents training with the GenDS dataset. Zoomed-in patches are provided for viewing fine details.
+                                    Qualitative comparisons of RestoreVAR with LDM-based generative AiOR approaches. RestoreVAR achieves consistent restoration with enhanced preservation of fine-details.
+                                </p>
+
+                                <img src="./static/images/qual2.png" alt="" border="0" height="500" width="1500">
+                                <p>
+                                    Qualitative comparisons of RestoreVAR with non-generative methods on real degradations. RestoreVAR consistently achieves better results, demonstrating its generalization capability.
                                 </p>
                             </div>
                         </div>
@@ -278,15 +286,13 @@
                     <!-- Abstract. -->
                     <div class="columns is-centered has-text-centered">
                         <div class="column is-four-fifths">
-                            <h2 class="title is-3">Analysis</h2>
+                            <h2 class="title is-3">Computational Complexity</h2>
                             <div class="content has-text-justified proposed-approach">
                                 <h5 class="subtitle has-text-centered"></h5>
                                 
-                                <img src="./static/images/analysis.png" alt="" border="0" height="500" width="1500">
+                                <img src="./static/images/table3.png" alt="" border="0" height="500" width="1500">
                                 <p>
-                                    (a) Shows the effect of scaling number of synthetic samples augmented with real data on OoD performance (LPIPS and FID). (b) The table presents 
-                                    LPIPS/FID scores for analyzing the performance difference between training on solely existing data, solely GenDeg data, and both real and 
-                                    GenDeg data (GenDS data).
+                                    Comparison of the computational complexity of RestoreVAR with LDM-based AiOR approaches.
                                 </p>
                                 
                             </div>
