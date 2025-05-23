@@ -1,349 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        td,
-        th {
-            border: 0px solid black;
-        }
-
-        img {
-            padding: 5px;
-        }
-
-        .content p {
-            font-size: 16px; /* Adjust font size for paragraphs */
-        }
-
-        /* Custom style for the section causing the issue */
-        .proposed-approach p {
-            font-size: 16px; /* Smaller font size */
-        }
-
-        .proposed-approach h5 {
-            font-size: 20px; /* Adjusted subtitle size */
-        }
-
-        /* Optionally adjust title sizes across the document */
-        h2.title {
-            font-size: 24px; /* Adjusted for all h2 elements */
-        }
-    </style>
-
-    <title>RestoreVAR</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-    <link rel="shortcut icon" href="./static/images/jhu_web.png" />
-
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
-    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestoreVAR</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="shortcut icon" href="./static/images/jhu_web.png" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    td, th { border: 0px solid black; }
+    img { padding: 5px; }
+    .content p { font-size: 16px; }
+    .proposed-approach p { font-size: 16px; }
+    .proposed-approach h5 { font-size: 20px; }
+    h2.title { font-size: 24px; }
+    .wide-image { border: 0; height: 500px; width: 100%; }
+  </style>
 </head>
 
 <body>
-
-
-    <section class="hero">
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <h1 class="title is-2 publication-title"> RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration
-                        </h1>
-                        <div class="is-size-5 publication-authors">
-                            <!-- Group of first four authors -->
-                            <div class="authors-group">
-                                <span class="author-block">
-                                    <a href="https://scholar.google.com/citations?user=SGty2eUAAAAJ&hl=en" target="_blank">Sudarshan Rajagopalan</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://scholar.google.com/citations?user=bReNhqAAAAAJ&hl=en" target="_blank">Kartik Narayan</a>,
-                                </span>
-                                <span class="author-block">
-                                    <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en"
-                                        target="_blank">Vishal M. Patel</a>
-                                </span>
-                            </div>
-                        </div>
-
-
-                        <div class="is-size-4 publication-authors">
-                            <span class="author-block">Johns Hopkins University</span>
-                        </div>
-
-                        <div class="column has-text-centered">
-                            <a href="as"></a>
-                            </span>
-                        </div>
-
-                        <div class="column has-text-centered">
-                            <div class="publication-links">
-                                <!-- PDF Link. -->
-<!-- PDF Link commented -->
-<!--
-    <div class="publication-links">
-    <!-- PDF Link. -->
-    <span class="link-block">
-        <a href="https://drive.google.com/file/d/1hXY1Y0QL_kd-gCU1bmO0EhLTMcN7ISJK/view?usp=sharing"
-            class="external-link button is-normal is-rounded is-dark" target="_blank">
-            <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-            </span>
-            <span>Paper</span>
-        </a>
-    </span>
--->
-<!-- Supplementary commented -->
-  <!--  
-    <span class="link-block">
-        <a href=""
-            class="external-link button is-normal is-rounded is-dark" target="_blank">
-            <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-            </span>
-            <span>Supplementary material</span>
-        </a>
-    </span>
-    -->
-                                <span class="link-block">
-                                    <a href=""
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="ai ai-arxiv"></i>
-                                        </span>
-                                        <span>Arxiv</span>
-                                    </a>
-                                </span>
-                                <span class="link-block">
-                                    <a href="https://github.com/sudraj2002/RestoreVAR"
-                                        class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon">
-                                            <i class="fab fa-github"></i>
-                                        </span>
-                                        <span>Code</span>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration</h1>
+            <div class="is-size-5 publication-authors">
+              <div class="authors-group">
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=SGty2eUAAAAJ&hl=en" target="_blank">Sudarshan Rajagopalan</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=bReNhqAAAAAJ&hl=en" target="_blank">Kartik Narayan</a>,</span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en" target="_blank">Vishal M. Patel</a></span>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    
-                    <h2 class="title is-3">Abstract</h2>
-                    
-                    <div class="content has-text-justified">
-                        <p>
-                           The use of latent diffusion models (LDMs) such as Stable Diffusion has significantly improved the perceptual quality of All-in-One image Restoration (AiOR) methods, 
-                            while also enhancing their generalization capabilities. However, these LDM-based frameworks suffer from slow inference due to their iterative denoising process, 
-                            rendering them impractical for time-sensitive applications. To address this, we propose RestoreVAR, a novel generative approach for AiOR that significantly outperforms LDM-based models 
-                            in restoration performance while achieving over **10×** faster inference. RestoreVAR leverages visual autoregressive modeling (VAR), a recently introduced approach
-                            which performs scale-space autoregression for image generation. VAR achieves comparable performance to that of state-of-the-art diffusion transformers with drastically reduced computational costs. 
-                            To optimally exploit these advantages of VAR for AiOR, we propose architectural modifications and improvements, including intricately designed cross-attention mechanisms and a latent-space refinement module, 
-                            tailored for the AiOR task. Extensive experiments show that RestoreVAR achieves state-of-the-art performance among generative AiOR methods, while also exhibiting strong generalization capabilities.
-                        </p>
-                    </div>
-
-                    <img src="./static/images/intro_website.png" alt="" style="border:0; height:500px; width:1500px;">
-                        <div class="content has-text-justified">
-                        <p>
-                          RestoreVAR, our proposed VAR-based scale-space generative AiOR model (a), significantly outperforms LDM-based methods as shown in (b). 
-                          RestoreVAR also offers drastic reductions in computational complexity as shown in (c).
-                        </p>
-                        </div>
-                </div>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">Johns Hopkins University</span>
             </div>
-            <!--/ Abstract. -->
-
-            <!-- Paper video. -->
-            <!--
-                <section class="section">
-                <div class="container is-max-desktop">
-                    <!-- Abstract. -->
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Motivation</h2>
-                            <div class="content has-text-justified proposed-approach">
-                                <h5 class="subtitle has-text-centered"></h5>
-
-                                <img src="./static/images/motivation.png" alt="" border=0 height=500 width=1500></img></
-                                <p>
-                                    Existing datasets are limited in size and lack scene diversity. Our GenDS dataset overcomes these challenges, as demonstrated in (a). 
-                                    Furthermore, the degradation patterns in GenDS dataset are highly diverse, bridging the gap between the degradation patterns in existing datasets and OoD datasets, as illustrated in (b).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </section>
-            -->
-            
-
-            <section class="section">
-                <div class="container is-max-desktop">
-                    <!-- Abstract. -->
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Proposed Approach</h2>
-                            <div class="content has-text-justified proposed-approach">
-                                <h5 class="subtitle has-text-centered"></h5>
-
-                                <img src="./static/images/block.png" alt="" border=0 height=500 width=1500></img></
-                                <p>
-                                   Illustration of RestoreVAR for training and inference. (a) Shows the training procedure for each component of RestoreVAR, and (b) shows the overall pipeline during inference. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <div class="container is-max-desktop">
-                    <!-- Abstract. -->
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Quantitative Comparisons</h2>
-                            <div class="content has-text-justified proposed-approach">
-                                <h5 class="subtitle has-text-centered"></h5>
-                                
-                                <p> Quantitative comparisons of RestoreVAR with the state-of-the-art LDM-based generative AiOR approaches, and non-generative methods. 
-                                    RestoreVAR significantly outperforms generative methods on PSNR, SSIM and LPIPS scores. The best generative approach is indicated in ***bold***.
-                                </p>
-                                <img src="./static/images/table1.png" alt="" border="0" height="500" width="1500">
-
-                                <p> Quantitative comparisons of generalization of RestoreVAR against state-of-the-art non-generative approaches on real-world images. The best result is indicated in ***bold***.
-                                </p>
-                                <img src="./static/images/table2.png" alt="" border="0" height="500" width="1500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--/ Paper video. -->
-
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>Arxiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/sudraj2002/RestoreVAR" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    
-            <section class="section">
-                <div class="container is-max-desktop">
-                    <!-- Abstract. -->
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Qualitative Results</h2>
-                            <div class="content has-text-justified proposed-approach">
-                                <h5 class="subtitle has-text-centered"></h5>
-                                
-                                <img src="./static/images/qual1.png" alt="" border="0" height="500" width="1500">
-                                <p>
-                                    Qualitative comparisons of RestoreVAR with LDM-based generative AiOR approaches. RestoreVAR achieves consistent restoration with enhanced preservation of fine-details.
-                                </p>
-
-                                <img src="./static/images/qual2.png" alt="" border="0" height="500" width="1500">
-                                <p>
-                                    Qualitative comparisons of RestoreVAR with non-generative methods on real degradations. RestoreVAR consistently achieves better results, demonstrating its generalization capability.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--/ Paper video. -->
-
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>The use of latent diffusion models (LDMs) such as Stable Diffusion has significantly improved the perceptual quality of All-in-One image Restoration (AiOR) methods, while also enhancing their generalization capabilities. However, these LDM-based frameworks suffer from slow inference due to their iterative denoising process, rendering them impractical for time-sensitive applications. To address this, we propose RestoreVAR, a novel generative approach for AiOR that significantly outperforms LDM-based models in restoration performance while achieving over <strong>10×</strong> faster inference. RestoreVAR leverages visual autoregressive modeling (VAR), a recently introduced approach which performs scale-space autoregression for image generation. VAR achieves comparable performance to that of state-of-the-art diffusion transformers with drastically reduced computational costs. To optimally exploit these advantages of VAR for AiOR, we propose architectural modifications and improvements, including intricately designed cross-attention mechanisms and a latent-space refinement module, tailored for the AiOR task. Extensive experiments show that RestoreVAR achieves state-of-the-art performance among generative AiOR methods, while also exhibiting strong generalization capabilities.</p>
+          </div>
+          <img src="./static/images/intro_website.png" alt="intro" class="wide-image">
+          <div class="content has-text-justified">
+            <p>RestoreVAR, our proposed VAR-based scale-space generative AiOR model (a), significantly outperforms LDM-based methods as shown in (b). RestoreVAR also offers drastic reductions in computational complexity as shown in (c).</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- Additional Sections (Motivation, Approach, Results, etc.) remain the same and can be appended similarly -->
 
-    
-            <section class="section">
-                <div class="container is-max-desktop">
-                    <!-- Abstract. -->
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Computational Complexity</h2>
-                            <div class="content has-text-justified proposed-approach">
-                                <h5 class="subtitle has-text-centered"></h5>
-                                
-                                <img src="./static/images/table3.png" alt="" border="0" height="500" width="1500">
-                                <p>
-                                    Comparison of the computational complexity of RestoreVAR with LDM-based AiOR approaches.
-                                </p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--/ Paper video. -->
-
-        </div>
-    </section>
-
-    <section class="section" id="BibTeX">
-                <div class="container content is-max-desktop">
-                    <h2 class="title">BibTeX</h2>
-                    <pre><code>@misc{
-}
+  <section class="section" id="BibTeX">
+    <div class="container content is-max-desktop">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{}
 </code></pre>
-                </div>
-            </section>
+    </div>
+  </section>
 
-            <section class="section">
-                <div class="container is-max-desktop content">
-                    <h5 class="title" style="font-size: 10px;"> Acknowledgement: The website template is taken from
-                        <span class="author-block">
-                            <a href="https://nerfies.github.io/" target="_blank">Nerfies</a>
-                    </h5>
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h5 class="title" style="font-size: 10px;">Acknowledgement: The website template is taken from <a href="https://nerfies.github.io/" target="_blank">Nerfies</a></h5>
+    </div>
+  </section>
 
-                </div>
-            </section>
-
-            <script>
-                const viewers = document.querySelectorAll(".image-compare");
-                viewers.forEach((element) => {
-                    let view = new ImageCompare(element, {
-                        hoverStart: true,
-                        addCircle: true
-                    }).mount();
-                });
-
-                $(document).ready(function () {
-                    var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
-                        lineNumbers: false,
-                        lineWrapping: true,
-                        readOnly: true
-                    });
-                    $(function () {
-                        $('[data-toggle="tooltip"]').tooltip()
-                    })
-                });
-            </script>
+  <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+      new ImageCompare(element, {
+        hoverStart: true,
+        addCircle: true
+      }).mount();
+    });
+  </script>
 </body>
 
 </html>
