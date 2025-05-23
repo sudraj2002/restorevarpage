@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        td,
+        th {
+            border: 0px solid black;
+        }
+
+        img {
+            padding: 5px;
+        }
+
+        .content p {
+            font-size: 16px; /* Adjust font size for paragraphs */
+        }
+
+        /* Custom style for the section causing the issue */
+        .proposed-approach p {
+            font-size: 16px; /* Smaller font size */
+        }
+
+        .proposed-approach h5 {
+            font-size: 20px; /* Adjusted subtitle size */
+        }
+
+        /* Optionally adjust title sizes across the document */
+        h2.title {
+            font-size: 24px; /* Adjusted for all h2 elements */
+        }
+    </style>
+
+    <title>GenDeg</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./static/images/jhu_web.png" />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title"> RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Group of first four authors -->
+                            <div class="authors-group">
+                                <span class="author-block">
+                                    <a href="https://scholar.google.com/citations?user=SGty2eUAAAAJ&hl=en" target="_blank">Sudarshan Rajagopalan</a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://scholar.google.com/citations?user=bReNhqAAAAAJ&hl=en" target="_blank">Kartik Narayan</a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://scholar.google.com/citations?user=AkEXTbIAAAAJ&hl=en"
+                                        target="_blank">Vishal M. Patel</a>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="is-size-4 publication-authors">
+                            <span class="author-block">Johns Hopkins University</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <a href="as"></a>
+                            </span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+<div class="publication-links">
+    <!-- PDF Link. -->
+    <span class="link-block">
+        <a href="https://drive.google.com/file/d/1hXY1Y0QL_kd-gCU1bmO0EhLTMcN7ISJK/view?usp=sharing"
+            class="external-link button is-normal is-rounded is-dark" target="_blank">
+            <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+            </span>
+            <span>Paper</span>
+        </a>
+    </span>
+
+    <!-- Supplementary material link commented out -->
+    
+    <span class="link-block">
+        <a href=""
+            class="external-link button is-normal is-rounded is-dark" target="_blank">
+            <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+            </span>
+            <span>Supplementary material</span>
+        </a>
+    </span>
+    
+                                <span class="link-block">
+                                    <a href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>Arxiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code (Coming Soon!)</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    
+                    <h2 class="title is-3">Abstract</h2>
+                    
+                    <div class="content has-text-justified">
+                        <p>
+                            Deep learning–based models for All-In-One image Restoration (AIOR) have achieved significant advancements in recent years. 
+                            However, their practical applicability is limited by poor generalization to samples outside the training distribution. 
+                            This limitation arises primarily from insufficient diversity in degradation variations and scenes within existing datasets, 
+                            resulting in inadequate representations of real-world scenarios. 
+                            Additionally, capturing large-scale real-world paired data for degradations such as haze, low-light, and raindrops is often cumbersome and sometimes infeasible. 
+                            In this paper, we leverage the generative capabilities of latent diffusion models to synthesize high-quality degraded images from their clean counterparts. 
+                            Specifically, we introduce GenDeg, a degradation and intensity-aware conditional diffusion model, capable of producing diverse degradation patterns on clean images. 
+                            Using GenDeg, we synthesize over 550k samples across six degradation types: haze, rain, snow, motion blur, low-light, and raindrops. 
+                            These generated samples are integrated with existing datasets to form the GenDS dataset, comprising over 750k samples. 
+                            Our experiments reveal that image restoration models trained on GenDS dataset exhibit significant improvements in out-of-distribution 
+                            performance as compared to when trained solely on existing datasets. 
+                            Furthermore, we provide comprehensive analyses on implications of diffusion model-based synthetic degradations for AIOR.
+                        </p>
+                    </div>
+
+                    <img src="./static/images/intro_website.png" alt="" style="border:0; height:500px; width:1500px;">
+                        <div class="content has-text-justified">
+                        <p>
+                          Out-of-distribution performance of image restoration models when trained solely using existing datasets and our proposed GenDS dataset. 
+                            Significant improvements can be observed across all degradations. Metric values reduce outward.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+            <!-- Paper video. -->
+
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- Abstract. -->
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Motivation</h2>
+                            <div class="content has-text-justified proposed-approach">
+                                <h5 class="subtitle has-text-centered"></h5>
+
+                                <img src="./static/images/motivation.png" alt="" border=0 height=500 width=1500></img></
+                                <p>
+                                    Existing datasets are limited in size and lack scene diversity. Our GenDS dataset overcomes these challenges, as demonstrated in (a). 
+                                    Furthermore, the degradation patterns in GenDS dataset are highly diverse, bridging the gap between the degradation patterns in existing datasets and OoD datasets, as illustrated in (b).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- Abstract. -->
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Proposed Approach</h2>
+                            <div class="content has-text-justified proposed-approach">
+                                <h5 class="subtitle has-text-centered"></h5>
+
+                                <img src="./static/images/block.png" alt="" border=0 height=500 width=1500></img></
+                                <p>
+                                    Illustration of our GenDeg framework: (a) Describes the training stage of our pipeline. (b) Shows the inference process for degradation generation. (c) Depicts the 
+                                    architecture of our Swin transformer-based restoration model.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- Abstract. -->
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Quantitative Results</h2>
+                            <div class="content has-text-justified proposed-approach">
+                                <h5 class="subtitle has-text-centered"></h5>
+                                
+                                <p> Quantitative comparisons of restoration models using LPIPS and FID metrics (lower is better), trained with and without our GenDS dataset. Performance is evaluated on OoD test sets. 
+                                    The table also includes the performance of existing state-of-the-art (SOTA) approaches. 
+                                    Training with the GenDS dataset significantly enhances OoD performance. (R) indicates real images and (S) indicates synthetic images.
+                                </p>
+                                <img src="./static/images/table.png" alt="" border="0" height="500" width="1500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ Paper video. -->
+
+        </div>
+    </section>
+
+    
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- Abstract. -->
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Qualitative Results</h2>
+                            <div class="content has-text-justified proposed-approach">
+                                <h5 class="subtitle has-text-centered"></h5>
+                                
+                                <img src="./static/images/qual.png" alt="" border="0" height="500" width="1500">
+                                <p>
+                                    Qualitative comparisons of image restoration models trained with and without our GenDS dataset. 
+                                    The suffix GD represents training with the GenDS dataset. Zoomed-in patches are provided for viewing fine details.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ Paper video. -->
+
+        </div>
+    </section>
+
+    </section>
+
+    
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- Abstract. -->
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Analysis</h2>
+                            <div class="content has-text-justified proposed-approach">
+                                <h5 class="subtitle has-text-centered"></h5>
+                                
+                                <img src="./static/images/analysis.png" alt="" border="0" height="500" width="1500">
+                                <p>
+                                    (a) Shows the effect of scaling number of synthetic samples augmented with real data on OoD performance (LPIPS and FID). (b) The table presents 
+                                    LPIPS/FID scores for analyzing the performance difference between training on solely existing data, solely GenDeg data, and both real and 
+                                    GenDeg data (GenDS data).
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ Paper video. -->
+
+        </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+                <div class="container content is-max-desktop">
+                    <h2 class="title">BibTeX</h2>
+                    <pre><code>@misc{rajagopalan2024gendegdiffusionbaseddegradationsynthesis,
+      title={GenDeg: Diffusion-Based Degradation Synthesis for Generalizable All-in-One Image Restoration}, 
+      author={Sudarshan Rajagopalan and Nithin Gopalakrishnan Nair and Jay N. Paranjape and Vishal M. Patel},
+      year={2024},
+      eprint={2411.17687},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2411.17687}, 
+}
+</code></pre>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container is-max-desktop content">
+                    <h5 class="title" style="font-size: 10px;"> Acknowledgement: The website template is taken from
+                        <span class="author-block">
+                            <a href="https://nerfies.github.io/" target="_blank">Nerfies</a>
+                    </h5>
+
+                </div>
+            </section>
+
+            <script>
+                const viewers = document.querySelectorAll(".image-compare");
+                viewers.forEach((element) => {
+                    let view = new ImageCompare(element, {
+                        hoverStart: true,
+                        addCircle: true
+                    }).mount();
+                });
+
+                $(document).ready(function () {
+                    var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+                        lineNumbers: false,
+                        lineWrapping: true,
+                        readOnly: true
+                    });
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip()
+                    })
+                });
+            </script>
+</body>
+
+</html>
